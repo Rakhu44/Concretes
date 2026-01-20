@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GNB Trophy Celebration</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle, #2b1b17, #120907);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", sans-serif;
+    color: white;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+/* ===== TROPHY ===== */
+svg.trophy {
+    width: 260px;
+    filter: drop-shadow(0 0 25px rgba(208, 197, 47, 0.8));
+    animation: float 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+/* ===== PARTY POPPERS ===== */
+.popper {
+    position: absolute;
+    top: 90px;
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(#ff9f1c, #d97706);
+    border-radius: 6px;
+    z-index: 3;
+}
+
+.popper.left { left: -100px; transform: rotate(-25deg); }
+.popper.right { right: -100px; transform: rotate(25deg); }
+
+/* ===== ADVANCED CONFETTI ===== */
+.confetti {
+    position: absolute;
+    bottom: 5px;
+    opacity: 0;
+    animation: explode 1.8s cubic-bezier(.15,.7,.3,1) forwards;
+}
+
+/* Shapes */
+.confetti.rect {
+    width: 6px;
+    height: 12px;
+}
+
+.confetti.circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+/* Physics animation */
+@keyframes explode {
+    0% {
+        transform: translate(0,0) rotate(0deg) scale(0.6);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) rotate(1080deg) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Text */
+.text {
+    margin-top: 20px;
+    font-size: 22px;
+    animation: fadeUp 1.2s ease-out;
+}
+
+.company {
+    margin-top: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Animations */
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT POPPER -->
+    <div class="popper left">
+        <div class="confetti rect"   style="--x:-120px; --y:-160px; background:#ff595e; animation-delay:.05s"></div>
+        <div class="confetti circle" style="--x:-90px;  --y:-140px; background:#ffca3a; animation-delay:.1s"></div>
+        <div class="confetti rect"   style="--x:-60px;  --y:-180px; background:#8ac926; animation-delay:.15s"></div>
+        <div class="confetti circle" style="--x:-140px; --y:-130px; background:#1982c4; animation-delay:.2s"></div>
+        <div class="confetti rect"   style="--x:-100px; --y:-200px; background:#6a4c93; animation-delay:.25s"></div>
+        <div class="confetti rect"   style="--x:-30px;  --y:-150px; background:#ffd166; animation-delay:.3s"></div>
+    </div>
+
+    <!-- RIGHT POPPER -->
+    <div class="popper right">
+        <div class="confetti rect"   style="--x:120px; --y:-160px; background:#ff595e; animation-delay:.05s"></div>
+        <div class="confetti circle" style="--x:90px;  --y:-140px; background:#ffca3a; animation-delay:.1s"></div>
+        <div class="confetti rect"   style="--x:60px;  --y:-180px; background:#8ac926; animation-delay:.15s"></div>
+        <div class="confetti circle" style="--x:140px; --y:-130px; background:#1982c4; animation-delay:.2s"></div>
+        <div class="confetti rect"   style="--x:100px; --y:-200px; background:#6a4c93; animation-delay:.25s"></div>
+        <div class="confetti rect"   style="--x:30px;  --y:-150px; background:#ffd166; animation-delay:.3s"></div>
+    </div>
+
+    <!-- TROPHY -->
+    <svg class="trophy" viewBox="0 0 300 300">
+        <ellipse cx="150" cy="55" rx="90" ry="22" fill="#e0913d"/>
+        <path d="M60 55 L90 160 Q150 190 210 160 L240 55 Z" fill="#d0812f"/>
+        <path d="M60 80 C20 90, 20 140, 60 150" fill="none" stroke="#d0812f" stroke-width="14"/>
+        <path d="M240 80 C280 90, 280 140, 240 150" fill="none" stroke="#d0812f" stroke-width="14"/>
+        <rect x="135" y="170" width="30" height="30" rx="6" fill="#b36a28"/>
+        <rect x="80" y="200" width="140" height="28" rx="6" fill="#7a451a"/>
+        <rect x="60" y="228" width="180" height="32" rx="8" fill="#5c3415"/>
+    </svg>
+
+    <div class="text">
+        🎉 Congratulations 🎉
+    </div>
+
+   
+</div>
+
+</body>
+</html>
